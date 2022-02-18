@@ -1,6 +1,8 @@
 # mintChip for OBS
 An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exterior
 
+### [Downloads →](https://github.com/MisutaaAsriel/mintChip-OBS/releases)
+
 ## Features
 
 - Spacious widgets, for ease of use and visibility
@@ -28,3 +30,6 @@ An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exteri
 
 ### PC
 ![PC Screenshot](https://github.com/MisutaaAsriel/mintChip-OBS/blob/main/PC%20B1.png)
+
+*****
+_Pssst! Wanna leave a tip, help a goat out? http://streamelements.com/misutaaasriel/tip_
