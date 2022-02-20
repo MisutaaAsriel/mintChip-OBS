@@ -1,0 +1,35 @@
+/*
+
+Colors ----------------------------------
+
+ice-cream (text):
+	rgb(238, 238, 238);
+
+mint (controls):
+	rgb(33, 202, 161);
+
+mint lite (highlight):
+	rgb(163, 255, 231);
+
+chips (background):
+	rgb(32, 39, 47);
+
+chip-select (selected):
+	rgb(47, 57, 66);
+
+pressed-chips (pressed):
+	rgb(87, 107, 126);
+
+extra-dark (contrast):
+	rgb(9, 22, 30);
+
+dark-selects (selected):
+	rgb(14, 31, 39);
+
+recording red:
+	rgb(255,0,20);
+
+blushing pink (hover):
+	rgb(255, 89, 131);
+
+*/

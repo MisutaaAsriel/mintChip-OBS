@@ -26,10 +26,10 @@ An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exteri
 
 ## Screenshots
 ### Mac
-![macOS Screenshot](https://github.com/MisutaaAsriel/mintChip-OBS/blob/main/macOS%20B1.png) 
+![macOS Screenshot](https://github.com/MisutaaAsriel/mintChip-OBS/blob/main/Screenshots/macOS%20B1.png) 
 
 ### PC
-![PC Screenshot](https://github.com/MisutaaAsriel/mintChip-OBS/blob/main/PC%20B1.png)
+![PC Screenshot](https://github.com/MisutaaAsriel/mintChip-OBS/blob/main/Screenshots/PC%20B1.png)
 
 *****
 _Pssst! Wanna leave a tip, help a goat out? http://streamelements.com/misutaaasriel/tip_
