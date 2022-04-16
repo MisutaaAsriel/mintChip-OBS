@@ -850,6 +850,18 @@ OBSTheme::disabled {
 		* [themeID="pauseIconSmall"] {
 		qproperty-icon: url(./Mintchip/pause.svg);
 		}
+
+		* [themeID="revertIcon"] {
+		qproperty-icon: url(./Mintchip/undo.svg);
+		}
+
+		* [themeID="trashIconSmall"] {
+		qproperty-icon: url(./Mintchip/delete.svg);
+		}
+
+		* [themeID="trashIcon"] {
+		qproperty-icon: url(./Mintchip/delete.svg);
+		}
 	/* #endregion */
 
 	/* #region Main Window */
@@ -870,6 +882,7 @@ OBSTheme::disabled {
 		qproperty-sceneIcon: url(./Mintchip/Sources/scene.svg);
 		qproperty-defaultIcon: url(./Mintchip/Sources/default.svg);
 		qproperty-windowIcon: url(./Mintchip/icon_256x256.png);
+		qproperty-trashIcon: url(./Mintchip/delete.svg);
 
 		qproperty-dockNestingEnabled: true;
 		qproperty-unifiedTitleAndToolBarOnMac: false;
@@ -1260,6 +1273,23 @@ OBSTheme::disabled {
 			qproperty-videoIcon: url(./Mintchip/Settings/video.svg);
 			qproperty-hotkeysIcon: url(./Mintchip/Settings/keys.svg);
 			qproperty-advancedIcon: url(./Mintchip/Settings/advanced.svg);
+		}
+
+		#hotkeyPage QLabel {
+			padding-top: 4px;
+		}
+
+		.OBSHotkeyEdit {
+			min-width: 96px;
+		}
+
+		#hotkeyPage QPushButton {
+			margin-left: 8px;
+			max-width: 24px;
+			min-width: 24px;
+			min-height: 22px;
+			max-height: 22px;
+			padding: 2px 2px;
 		}
 	/* #endregion */
 
