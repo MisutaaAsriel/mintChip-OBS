@@ -1,3 +1,5 @@
+### Notice: OBS 28.0 introduces changes to the QT UI framework which fundamentally breaks random elements of this theme. However, due to incompatibilities with my system, until such features can be fixed, consider this theme applicable to 27.X only.
+*****
 # mintChip for OBS
 An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exterior
 
