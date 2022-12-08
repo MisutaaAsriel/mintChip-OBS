@@ -18,10 +18,8 @@ An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exteri
 ## Known Bugs
 
 - Control alignment may be off on some elements by 8px due to global margins.
-- **Windows** drags the scrollbar itself with scroll-handle.
 - Dock control icons, when unlocked, may be small on some displays.
 - Colors may be washed our or muddied on some displays, reducing contrast.
-- White separator lines may appear between elements **on Windows**.
 - **Mac** does not apply custom window icon.
 
 ## Screenshots
