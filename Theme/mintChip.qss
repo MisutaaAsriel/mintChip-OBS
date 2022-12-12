@@ -3,7 +3,7 @@ OBSThemeMeta {
     author: 'Asriel Dreemurr (Azi) ♡';
 }
 
-OBSTheme::active {
+OBSTheme {
 	window: palette(base);
 	base: rgb(32, 39, 47);
 	alternateBase: palette(dark);
@@ -98,11 +98,11 @@ OBSTheme::inactive {
 	}
 
 	QMainWindow,
-	QMainWindow:hover,
 	QDialog,
 	QWidget,
 	QFrame {
 		background-color: palette(base); /* Window Background */
+		alternate-background-color: palette(base);
 		selection-background-color: palette(highlight); 
 		selection-color: palette(text); 
 		outline: none;
@@ -114,9 +114,9 @@ OBSTheme::inactive {
 		padding: 16px;
 	}
 
-	QWidget::item:hover {
-		background-color: palette(mid); /* Hover Background */
-	}
+	/* QWidget::item:hover {
+		background-color: palette(mid); 
+	} */ /* Hover Background */
 
 	QSizeGrip {
 		image: url(./Mintchip/Controls/arrow-down-right.svg);
@@ -980,6 +980,10 @@ OBSTheme::inactive {
 		}
 
 		* [themeID="trashIcon"] {
+		qproperty-icon: url(./Mintchip/delete.svg);
+		}
+
+		* [themeID="clearIconSmall"] {
 		qproperty-icon: url(./Mintchip/delete.svg);
 		}
 	/* #endregion */
