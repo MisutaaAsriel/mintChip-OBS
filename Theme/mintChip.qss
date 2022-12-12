@@ -1321,6 +1321,8 @@ OBSTheme::inactive {
 			padding: 0px;
 			margin: 0px;
 			min-height: 0px;
+			min-height: 168px;
+			max-height: 168px;
 		}
 
 		#transitions {
