@@ -1,7 +1,7 @@
 # mintChip for OBS
 An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exterior
 
-### [Downloads →](https://github.com/MisutaaAsriel/mintChip-OBS/releases)
+### [Downloads →](../../releases)｜[Installation →](../../wiki/Installation)
 
 ## Features
 
@@ -12,15 +12,8 @@ An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exteri
   - **Green** — **Target**; Audio should fall within this range
   - **Blue** — **Nominal**; Audio is not at risk, but may be quiet for some viewers
 - Contrasted elements
-- **_Mac & PC Optomized Variants!_**
+- **_Mac & PC Compatible!_**
 - _Minty-fresh taste!_
-
-## Known Bugs
-
-- Control alignment may be off on some elements by 8px due to global margins.
-- Dock control icons, when unlocked, may be small on some displays.
-- Colors may be washed our or muddied on some displays, reducing contrast.
-- **Mac** does not apply custom window icon.
 
 ## Screenshots
 ### Mac
