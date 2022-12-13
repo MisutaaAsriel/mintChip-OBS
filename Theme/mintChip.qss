@@ -1028,8 +1028,6 @@ OBSTheme::inactive {
 
 				#previewLayout,
 				#previewDisabledWidget {
-					max-height: 50%;
-					height: 50%;
 					border-radius: 6px;
 					margin: 12px 6px 0px 6px;
 					padding: 0px;
