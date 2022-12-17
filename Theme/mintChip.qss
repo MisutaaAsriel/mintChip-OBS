@@ -99,8 +99,7 @@ OBSTheme::inactive {
 
 	QMainWindow,
 	QDialog,
-	QWidget,
-	QFrame {
+	QWidget {
 		background-color: palette(base); /* Window Background */
 		alternate-background-color: palette(base);
 		selection-background-color: palette(highlight); 
@@ -108,6 +107,11 @@ OBSTheme::inactive {
 		outline: none;
 
 		qproperty-windowIcon: url(./Mintchip/icon_256x256.png); /* Window Icon */
+	}
+
+	QFrame,
+	QLabel {
+		background-color: transparent;
 	}
 
 	QMainWindow {
@@ -153,12 +157,12 @@ OBSTheme::inactive {
 		QToolButton {
 			border-radius: 6px;
 			color: palette(text);
+			background-color: palette(mid);
 		}
 
 		QPushButton {
 			padding: 4px 12px;
 			min-width: 36px;
-			background-color: palette(mid);
 		}
 		
 		QPushButton:hover,
@@ -1356,9 +1360,23 @@ OBSTheme::inactive {
 	/* #endregion */
 
 	/* #region Stream Control Buttons */
-		#controlsDockContents > QPushButton {
+		#controlsDockContents QPushButton {
 			margin: 2px 12px;
-			background-color: palette(mid);
+			/* background-color: palette(mid); */
+		}
+
+		#controlsDockContents QPushButton:hover,
+		#controlsDockContents QPushButton:checked,
+		#modeSwitch:hover,
+		#modeSwitch:checked {
+			background-color: rgba(47, 194, 162, 180);
+			border: 1px solid rgba(47, 194, 162, 180);
+		}
+
+		#controlsDockContents QPushButton:pressed,
+		#modeSwitch:pressed {
+			background-color: rgb(47, 194, 162);
+			border: 1px solid rgb(47, 194, 162);
 		}
 
 		#controlsDockContents QPushButton[themeID="vcamButton"] {
@@ -1370,41 +1388,33 @@ OBSTheme::inactive {
 			margin-left: 0px;
 		}
 
-		#controlsDockContents QPushButton:hover,
-		#controlsDockContents QPushButton:checked {
-			background-color: rgba(47, 194, 162, 180);
-			border: 1px solid rgba(47, 194, 162, 180);
-		}
-
-		#controlsDockContents QPushButton:pressed {
-			background-color: rgb(47, 194, 162);
-			border: 1px solid rgb(47, 194, 162);
-		}
-
-		QPushButton#streamButton,
-		QPushButton#recordButton,
-		#controlsDockContents QPushButton[themeID="vcamButton"] {
+		QAbstractButton#streamButton,
+		QAbstractButton#recordButton,
+		QAbstractButton[themeID="vcamButton"] {
 			background-color: rgb(80, 50, 60);
 			border: 1px solid rgb(80, 50, 60);
 		}
 
-		QPushButton:hover#streamButton,
-		QPushButton:hover#recordButton,
-		#controlsDockContents QPushButton:hover[themeID="vcamButton"] {
+		QAbstractButton:hover#streamButton,
+		QAbstractButton:hover#recordButton,
+		QAbstractButton:hover[themeID="vcamButton"],
+		#controlsDockContents :hover[themeID="vcamButton"] {
 			background-color: rgb(180, 60, 90);
 			border: 1px solid rgb(180, 60, 90);
 		}
 
-		QPushButton:checked#streamButton,
-		QPushButton:checked#recordButton,
-		#controlsDockContents QPushButton:hover[themeID="vcamButton"] {
+		QAbstractButton:checked#streamButton,
+		QAbstractButton:checked#recordButton,
+		QAbstractButton:checked[themeID="vcamButton"],
+		#controlsDockContents :checked[themeID="vcamButton"] {
 			background-color: rgb(255, 0, 20);
 			border: 1px solid rgb(255, 0, 20);
 		}
 
-		QPushButton:checked:hover#streamButton,
-		QPushButton:checked:hover#recordButton,
-		#controlsDockContents QPushButton:hover[themeID="vcamButton"] {
+		QAbstractButton:checked:hover#streamButton,
+		QAbstractButton:checked:hover#recordButton:checked:hover,
+		QAbstractButton:checked:hover[themeID="vcamButton"],
+		#controlsDockContents :checked:hover[themeID="vcamButton"] {
 			background-color: rgb(255, 80, 120);
 			border: 1px solid rgb(255, 80, 120);
 		}
@@ -1525,6 +1535,30 @@ OBSTheme::inactive {
 		}
 	/* #endregion */
 
+	/* #region Toolbar Plugin */
+		#toolbarDisplay {
+			border: 1px solid palette(light);
+			background-color: palette(mid);
+			border-radius: 6px;
+		}
+
+		#toolbarContents {
+			background-color: palette(dark);
+		}
+
+		#toolbarDock #recordButton {
+			qproperty-icon: url(./Mintchip/Settings/output.svg);
+		}
+
+		#toolbarDock #floatButton {
+			qproperty-icon: url(./Mintchip/window.svg);
+		}
+
+		#toolbarDock #virtualCamButton {
+			qproperty-icon: url(./Mintchip/Sources/webcam.svg);
+		}
+	/* #endregion */
+
 /* #endregion */
 
 /* #region Special Configurations */
@@ -1545,6 +1579,12 @@ OBSTheme::inactive {
 	QLabel#errorLabel {
 		color: rgb(240, 240, 240); /* Dark Pink (Secondary Dark) */
 		font-weight: bold;
+	}
+
+	QToolTip {
+		padding: 4px;
+		margin: 0px;
+		background-color: palette(dark);
 	}
 /* #endregion */
 
