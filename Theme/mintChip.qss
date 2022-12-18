@@ -1412,7 +1412,7 @@ OBSTheme::inactive {
 		}
 
 		QAbstractButton:checked:hover#streamButton,
-		QAbstractButton:checked:hover#recordButton:checked:hover,
+		QAbstractButton:checked:hover#recordButton,
 		QAbstractButton:checked:hover[themeID="vcamButton"],
 		#controlsDockContents :checked:hover[themeID="vcamButton"] {
 			background-color: rgb(255, 80, 120);
