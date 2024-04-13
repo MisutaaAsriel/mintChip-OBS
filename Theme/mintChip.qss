@@ -1390,7 +1390,8 @@ OBSTheme::inactive {
 
 		QAbstractButton#streamButton,
 		QAbstractButton#recordButton,
-		QAbstractButton[themeID="vcamButton"] {
+		QAbstractButton[themeID="vcamButton"]
+		QAbstractButton[themeID="replayBufferButton"] {
 			background-color: rgb(80, 50, 60);
 			border: 1px solid rgb(80, 50, 60);
 		}
@@ -1398,6 +1399,7 @@ OBSTheme::inactive {
 		QAbstractButton:hover#streamButton,
 		QAbstractButton:hover#recordButton,
 		QAbstractButton:hover[themeID="vcamButton"],
+		QAbstractButton:hover[themeID="replayBufferButton"],
 		#controlsDockContents :hover[themeID="vcamButton"] {
 			background-color: rgb(180, 60, 90);
 			border: 1px solid rgb(180, 60, 90);
@@ -1406,6 +1408,7 @@ OBSTheme::inactive {
 		QAbstractButton:checked#streamButton,
 		QAbstractButton:checked#recordButton,
 		QAbstractButton:checked[themeID="vcamButton"],
+		QAbstractButton:checked[themeID="replayBufferButton"],
 		#controlsDockContents :checked[themeID="vcamButton"] {
 			background-color: rgb(255, 0, 20);
 			border: 1px solid rgb(255, 0, 20);
@@ -1414,6 +1417,7 @@ OBSTheme::inactive {
 		QAbstractButton:checked:hover#streamButton,
 		QAbstractButton:checked:hover#recordButton,
 		QAbstractButton:checked:hover[themeID="vcamButton"],
+		QAbstractButton:checked:hover[themeID="replayBufferButton"]
 		#controlsDockContents :checked:hover[themeID="vcamButton"] {
 			background-color: rgb(255, 80, 120);
 			border: 1px solid rgb(255, 80, 120);
@@ -1548,6 +1552,10 @@ OBSTheme::inactive {
 
 		#toolbarDock #recordButton {
 			qproperty-icon: url(./Mintchip/Settings/output.svg);
+		}
+
+		#toolbarDock #replayBufferButton {
+			qproperty-icon: url(./Mintchip/replay.svg);
 		}
 
 		#toolbarDock #floatButton {
