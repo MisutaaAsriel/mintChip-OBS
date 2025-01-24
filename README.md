@@ -1,3 +1,5 @@
+# Update: Recently Refurbished for Composable Themes!
+
 # mintChip for OBS
 An ~~Streamlabs~~ inspired OBS theme, with spacious views and minty fresh exterior
 
