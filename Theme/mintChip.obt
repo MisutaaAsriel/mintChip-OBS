@@ -1,75 +1,220 @@
-OBSThemeMeta {
+/* #region OBS Elements */
+
+@OBSThemeMeta {
     dark: 'true';
+	id: 'com.asriel.MintChip';
+	name: 'MintChip';
     author: 'Asriel Dreemurr (Azi) ♡';
 }
 
-OBSTheme {
-	window: palette(base);
-	base: rgb(32, 39, 47);
-	alternateBase: palette(dark);
-	text: rgb(238, 238, 238);
+@OBSThemeVars {
+	--palette_window: var(--palette_base);
+	--palette_base: rgb(32, 39, 47);
+	--palette_alternateBase: var(--palette_base);
+	--palette_text: rgb(238, 238, 238);
 	
-	light: rgb(87, 107, 126);
-	mid: rgb(47, 57, 66);
-	dark: rgb(14, 31, 39);
-	shadow: rgb(9, 22, 30);
+	--palette_light: rgb(87, 107, 126);
+	--palette_mid: rgb(47, 57, 66);
+	--palette_dark: rgb(14, 31, 39);
+	--palette_shadow: rgb(9, 22, 30);
 	
-	button: palette(mid);
-	highlight: rgb(33, 202, 161);
+	--palette_button: var(--palette_mid);
+	--palette_highlight: rgb(33, 202, 161);
+
+	--palette_text_disabled: #eeeeee40;
 }
 
+	/* #region Icon Overrides */
 
-OBSTheme::disabled {
-	text: #eeeeee40;
-}
+	OBSBasic {
+		qproperty-imageIcon: url(theme:Mintchip/Sources/image.svg);
+		qproperty-colorIcon: url(theme:Mintchip/Sources/brush.svg);
+		qproperty-slideshowIcon: url(theme:Mintchip/Sources/images.svg);
+		qproperty-audioInputIcon: url(theme:Mintchip/Sources/microphone.svg);
+		qproperty-audioOutputIcon: url(theme:Mintchip/Sources/sound.svg);
+		qproperty-desktopCapIcon: url(theme:Mintchip/Sources/monitor.svg);
+		qproperty-windowCapIcon: url(theme:Mintchip/Sources/window.svg);
+		qproperty-gameCapIcon: url(theme:Mintchip/Sources/default.svg);
+		qproperty-cameraIcon: url(theme:Mintchip/Sources/webcam.svg);
+		qproperty-textIcon: url(theme:Mintchip/Sources/text.svg);
+		qproperty-mediaIcon: url(theme:Mintchip/Settings/video.svg);
+		qproperty-browserIcon: url(theme:Mintchip/Sources/globe.svg);
+		qproperty-groupIcon: url(theme:Mintchip/Sources/folder.svg);
+		qproperty-sceneIcon: url(theme:Mintchip/Sources/scene.svg);
+		qproperty-defaultIcon: url(theme:Mintchip/Sources/default.svg);
+		qproperty-windowIcon: url(theme:Mintchip/icon_256x256.png);
+		qproperty-trashIcon: url(theme:Mintchip/delete.svg);
 
-/* #region OBS Colors */
+		qproperty-dockNestingEnabled: true;
+		qproperty-unifiedTitleAndToolBarOnMac: false;
+	}
 
-/* OBSTheme {
-    window: rgb(31,33,42);
-    windowText: rgb(255,254,255);
+	.icon-plus {
+		qproperty-icon: url(theme:Mintchip/plus.svg);
+	}
 
-    base: rgb(43,46,56);
-    alternateBase: rgb(11,10,11);
+	.icon-minus {
+		qproperty-icon: url(theme:Mintchip/minus.svg);
+	}
 
-    text: rgb(255,254,255);
-    
-    button: rgb(60,64,75);
-    buttonText: rgb(255,254,255);
+	.icon-trash {
+		qproperty-icon: url(theme:Mintchip/delete.svg);
+	}
 
-    brightText: rgb(255,254,255);
+	.icon-clear {
+		qproperty-icon: url(theme:Dark/entry-clear.svg);
+	}
 
-    light: rgb(88,87,88);
-    mid: rgb(31,33,42);
-    dark: rgb(43,46,56);
-    shadow: rgb(11,10,11);
+	.icon-gear {
+		qproperty-icon: url(theme:Mintchip/settings/cog.svg);
+	}
 
-    primary: rgb(40,76,184);
-    primaryLight: rgb(54,92,192);
-    primaryDark: rgb(25,27,38);
+	.icon-dots-vert {
+    	qproperty-icon: url(theme:Mintchip/Controls/dots-vert.svg);
+	}
 
-    highlight: rgb(42,130,218);
-    highlightText: rgb(255,254,255);
+	.icon-dots-vert:hover {
+		icon: url(theme:Mintchip/Controls/dots-vert-hover.svg);
+	}
 
-    link: rgb(77,166,255);
-    linkVisited: rgb(77,166,255);
-}
+	.icon-refresh {
+		qproperty-icon: url(theme:Mintchip/refresh.svg);
+	}
 
-OBSTheme::disabled {
-    windowText: rgb(153,153,153);
-    text: rgb(153,153,153);
-    button: rgb(27,29,34);
-    
-    buttonText: rgb(43,46,56);
-    brightText: rgb(43,46,56);
-}
+	.icon-cogs {
+		qproperty-icon: url(theme:Mintchip/settings/cog.svg);
+	}
 
-OBSTheme::inactive {
-    text: rgb(255,254,255);
-    
-    highlight: rgb(25,28,34);
-    highlightText: rgb(255,255,255);
-} */
+	.icon-touch {
+		qproperty-icon: url(theme:Dark/interact.svg);
+	}
+
+	.icon-up {
+		qproperty-icon: url(theme:Mintchip/controls/angle-up.svg);
+	}
+
+	.icon-down {
+		qproperty-icon: url(theme:Mintchip/controls/angle-down.svg);
+	}
+
+	.icon-pause {
+		qproperty-icon: url(theme:Mintchip/pause.svg);
+	}
+
+	.icon-filter {
+		qproperty-icon: url(theme:Mintchip/filter.svg);
+	}
+
+	.icon-revert {
+		qproperty-icon: url(theme:Mintchip/undo.svg);
+	}
+
+	.icon-save {
+		qproperty-icon: url(theme:Mintchip/save.svg);
+	}
+
+	.icon-media-play {
+    	qproperty-icon: url(theme:Mintchip/play.svg);
+	}
+
+	.icon-media-pause {
+		qproperty-icon: url(theme:Mintchip/pause.svg);
+	}
+
+	.icon-media-restart {
+		qproperty-icon: url(theme:Mintchip/restart.svg);
+	}
+
+	.icon-media-stop {
+		qproperty-icon: url(theme:Dark/media/media_stop.svg);
+	}
+
+	.icon-media-next {
+		qproperty-icon: url(theme:Dark/media/media_next.svg);
+	}
+
+	.icon-media-prev {
+		qproperty-icon: url(theme:Dark/media/media_previous.svg);
+	}
+
+	/* #region Source Indicators */
+
+    .indicator-visibility::indicator:checked {
+        image: url(theme:Mintchip/Controls/eye.svg);
+    }
+
+    .indicator-visibility::indicator:unchecked {
+        image: url(theme:Mintchip/Controls/eye-slash.svg);
+    }
+
+    .indicator-visibility::indicator:checked:hover {
+        image: url(theme:Mintchip/Controls/eye-hover.svg);
+    }
+
+    .indicator-visibility::indicator:unchecked:hover {
+        image: url(theme:Mintchip/Controls/eye-slash-hover.svg);
+    }
+
+    .indicator-lock::indicator:checked {
+        image: url(theme:Mintchip/Controls/locked.svg);
+    }
+
+    .indicator-lock::indicator:unchecked {
+        image: url(theme:Mintchip/Controls/unlocked.svg);
+    }
+
+    .indicator-lock::indicator:checked:hover {
+        image: url(theme:Mintchip/Controls/locked-hover.svg);
+    }
+
+    .indicator-lock::indicator:unchecked:hover {
+        image: url(theme:Mintchip/Controls/unlocked-hover.svg);
+    }
+
+/* #endregion */
+
+/* #region Mute Indicator */
+
+    .indicator-mute::indicator:checked {
+        image: url(theme:Mintchip/controls/mute.svg);
+    }
+
+    .indicator-mute::indicator:indeterminate {
+        image: url(theme:Dark/unassigned.svg);
+    }
+
+    .indicator-mute::indicator:unchecked {
+        image: url(theme:Mintchip/controls/audio.svg);
+    }
+
+    .indicator-mute::indicator:unchecked:hover {
+        image: url(theme:Mintchip/controls/audio-hover.svg);
+    }
+
+    .indicator-mute::indicator:unchecked:focus {
+        image: url(theme:Mintchip/controls/audio.svg);
+    }
+
+    .indicator-mute::indicator:checked:hover {
+        image: url(theme:Mintchip/controls/mute-hover.svg);
+    }
+
+    .indicator-mute::indicator:checked:focus {
+        image: url(theme:Mintchip/controls/mute.svg);
+    }
+
+    .indicator-mute::indicator:checked:disabled {
+        image: url(theme:Mintchip/controls/mute.svg);
+    }
+
+    .indicator-mute::indicator:unchecked:disabled {
+        image: url(theme:Mintchip/controls/audio.svg);
+    }
+
+/* #endregion */
+
+
+	/* #endregion */
 
 /* #endregion */
 
@@ -77,7 +222,7 @@ OBSTheme::inactive {
 
 	/* #region Primary Elements */
 	* {
-		color: palette(text);
+		color: var(--palette_text);
 		font-family: "SF Compact Rounded", "Arial Rounded MT", Noto Sans, "Segoe UI", Helvetica, Tahoma, Arial;
 
 		font-weight: bold;
@@ -89,24 +234,22 @@ OBSTheme::inactive {
 		border-radius: 0px;
 		background-color: transparent;
 		position: relative;
-
-		text-overflow: ellipsis;
 	}
 
 	*:disabled {
-		color: palette(light); /* Disabled Text Color */
+		color: var(--palette_light); /* Disabled Text Color */
 	}
 
 	QMainWindow,
 	QDialog,
 	QWidget {
-		background-color: palette(base); /* Window Background */
-		alternate-background-color: palette(base);
-		selection-background-color: palette(highlight); 
-		selection-color: palette(text); 
+		background-color: var(--palette_base); /* Window Background */
+		alternate-background-color: var(--palette_base);
+		selection-background-color: var(--palette_highlight); 
+		selection-color: var(--palette_text); 
 		outline: none;
 
-		qproperty-windowIcon: url(./Mintchip/icon_256x256.png); /* Window Icon */
+		qproperty-windowIcon: url(theme:Mintchip/icon_256x256.png); /* Window Icon */
 	}
 
 	QFrame,
@@ -119,11 +262,11 @@ OBSTheme::inactive {
 	}
 
 	/* QWidget::item:hover {
-		background-color: palette(mid); 
+		background-color: var(--palette_mid); 
 	} */ /* Hover Background */
 
 	QSizeGrip {
-		image: url(./Mintchip/Controls/arrow-down-right.svg);
+		image: url(theme:Mintchip/Controls/arrow-down-right.svg);
 		min-width: 8px;
 		min-height: 8px;
 		margin: 0px;
@@ -146,7 +289,7 @@ OBSTheme::inactive {
 			}
 
 			QMainWindow::separator:hover {
-				background-color: palette(light);
+				background-color: var(--palette_light);
 			}
 		/* #endregion */
 
@@ -156,25 +299,26 @@ OBSTheme::inactive {
 		QPushButton,
 		QToolButton {
 			border-radius: 6px;
-			color: palette(text);
-			background-color: palette(mid);
+			color: var(--palette_text);
+			background-color: var(--palette_mid);
 		}
 
 		QPushButton {
 			padding: 4px 12px;
 			min-width: 36px;
+			min-height: 24px;
 		}
 		
 		QPushButton:hover,
 		QToolButton:hover,
 		QTabBar::tab:!selected:hover {
-			background: palette(light);
+			background: var(--palette_light);
 		}
 
 		QPushButton:pressed,
 		QToolButton:pressed,
 		QPushButton:checked:pressed {
-			background: palette(highlight);
+			background: var(--palette_highlight);
 		}
 	/* #endregion */
 
@@ -184,12 +328,12 @@ OBSTheme::inactive {
 		}
 
 		QDockWidget {
-			background: palette(base);
+			background: var(--palette_base);
 			min-width: 320px;
 		}
 
 		QDockWidget::title {
-			background: palette(base);
+			background: var(--palette_base);
 			padding: 12px 0px 0px 0px;
 			margin: 0px;
 			subcontrol-position: center center;
@@ -204,8 +348,8 @@ OBSTheme::inactive {
 		} /* Fixes Alignment Issue When Locked */
 
 		QDockWidget {
-			titlebar-close-icon: url('./Mintchip/close.svg');
-			titlebar-normal-icon: url('./Mintchip/window.svg');
+			titlebar-close-icon: url(theme:Mintchip/close.svg);
+			titlebar-normal-icon: url(theme:Mintchip/window.svg);
 		}
 
 		QDockWidget::close-button, QDockWidget::float-button {
@@ -236,24 +380,24 @@ OBSTheme::inactive {
 		}
 
 		QDockWidget::close-button:hover, QDockWidget::float-button:hover {
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 		}
 
 		QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
 			padding: 1px -1px -1px 1px;
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 		}
 	/* #endregion */
 
 	/* #region Lists */
 		QListWidget, QListWidget > *, QListWidget::item {
-			background-color: palette(shadow);
+			background-color: var(--palette_shadow);
 			border-radius: 6px;
 			padding: 8px;
 		}
 
 		/* QListWidget * {
-			background-color: palette(shadow);
+			background-color: var(--palette_shadow);
 		} */
 
 		QListWidget::item {
@@ -265,31 +409,31 @@ OBSTheme::inactive {
 
 
 		QListWidget::item:selected {
-			background-color: palette(dark);
+			background-color: var(--palette_dark);
 		}
 
 		QListWidget::item:hover,
 		QListWidget::item:disabled:hover,
 		QListWidget::item:hover:!active {
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 		}
 
 		.QVBoxLayout {
-			background: palette(shadow);
+			background: var(--palette_shadow);
 			border-radius: 6px;
 		}
 	/*#endregion*/
 
 	/* #region Menus */
 		QMenuBar::item {
-			background: palette(base);
+			background: var(--palette_base);
 			padding: 4px;
 			margin-right: 4px;
 		}
 
 		QMenuBar::item:selected {
-			background-color: palette(highlight);
-			color: palette(shadow);
+			background-color: var(--palette_highlight);
+			color: var(--palette_shadow);
 			border-radius: 4px;
 		}
 
@@ -298,7 +442,7 @@ OBSTheme::inactive {
 			background-color: rgb(163, 255, 231);
 			margin-bottom: -1px;
 			padding-bottom: 1px;
-			color: palette(shadow);
+			color: var(--palette_shadow);
 		}
 
 		QMenu {
@@ -326,24 +470,24 @@ OBSTheme::inactive {
 		}
 
 		QMenu::item:selected {
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 			border-radius: 4px;
 		}
 
 		QMenu::indicator:non-exclusive:unchecked {
-		image: url(./Mintchip/Controls/square.svg);
+		image: url(theme:Mintchip/Controls/square.svg);
 		}
 
 		QMenu::indicator:non-exclusive:unchecked:selected {
-		image: url(./Mintchip/Controls/square-hover.svg);
+		image: url(theme:Mintchip/Controls/square-hover.svg);
 		}
 
 		QMenu::indicator:non-exclusive:checked {
-		image: url(./Mintchip/Controls/square-full.svg);
+		image: url(theme:Mintchip/Controls/square-full.svg);
 		}
 
 		QMenu::indicator:non-exclusive:checked:selected {
-		image: url(./Mintchip/Controls/square-full-hover.svg);
+		image: url(theme:Mintchip/Controls/square-full-hover.svg);
 		}
 	/* #endregion */
 
@@ -360,7 +504,7 @@ OBSTheme::inactive {
 		}
 
 		QScrollBar::handle {
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 			min-width: 3px;
 			min-height: 3px;
 			margin: 3px;
@@ -371,7 +515,7 @@ OBSTheme::inactive {
 		}
 
 		QScrollBar::handle:hover {
-			background-color: palette(light);
+			background-color: var(--palette_light);
 		}
 
 		QAbstractScrollArea::corner {
@@ -462,22 +606,22 @@ OBSTheme::inactive {
 		}
 
 		QTabBar::close-button {
-			image: url(./Mintchip/close.svg);
+			image: url(theme:Mintchip/close.svg);
 			background: transparent;
 		}
 
 		QTabBar::close-button:hover {
-			background: palette(mid);
+			background: var(--palette_mid);
 		}
 
 		QTabBar::close-button:pressed {
-			image: url(./Mintchip/close.svg);
-			background: palette(light);
+			image: url(theme:Mintchip/close.svg);
+			background: var(--palette_light);
 		}
 
 		QTabBar::tab {
-			background-color: palette(highlight);
-			color: palette(shadow); 
+			background-color: var(--palette_highlight);
+			color: var(--palette_shadow); 
 			border-radius: 4px;
 			margin: 2px;
 			padding: 8px;
@@ -485,14 +629,14 @@ OBSTheme::inactive {
 		}
 
 		QTabBar::tab:!selected {
-			background-color: palette(mid);
-			color: palette(text);
+			background-color: var(--palette_mid);
+			color: var(--palette_text);
 		}
 	/* #endregion */
 
 	/* #region Toolbars */
 		QToolBar {
-			background-color: palette(shadow);
+			background-color: var(--palette_shadow);
 			border-radius: 6px;
 			margin: 8px 0px 0px 0px;
 			min-height: 48px;
@@ -520,9 +664,9 @@ OBSTheme::inactive {
 	/* #region Spinboxes */
 		QAbstractSpinBox {
 			padding: 8px;
-			border: 0px solid palette(light);/* Light Gray */
-			background-color: palette(shadow);
-			color: palette(text); /* White */
+			border: 0px solid var(--palette_light);/* Light Gray */
+			background-color: var(--palette_shadow);
+			color: var(--palette_text); /* White */
 			border-radius: 6px;
 			min-width: 75px;
 		}
@@ -544,33 +688,33 @@ OBSTheme::inactive {
 		QAbstractSpinBox::up-arrow,
 		QAbstractSpinBox::up-arrow:disabled,
 		QAbstractSpinBox::up-arrow:off {
-			image: url(./Mintchip/Controls/angle-up-disabled.svg);
+			image: url(theme:Mintchip/Controls/angle-up-disabled.svg);
 			width: 16px;
 			height: 16px;
 		}
 
 		QAbstractSpinBox::up-arrow:hover {
-			image: url(./Mintchip/Controls/angle-up.svg);
+			image: url(theme:Mintchip/Controls/angle-up.svg);
 		}
 
 		QAbstractSpinBox::down-arrow,
 		QAbstractSpinBox::down-arrow:disabled,
 		QAbstractSpinBox::down-arrow:off {
-			image: url(./Mintchip/Controls/angle-down-disabled.svg);
+			image: url(theme:Mintchip/Controls/angle-down-disabled.svg);
 			width: 16px;
 			height: 16px;
 		}
 
 		QAbstractSpinBox::down-arrow:hover {
-			image: url(./Mintchip/Controls/angle-down.svg);
+			image: url(theme:Mintchip/Controls/angle-down.svg);
 		}
 	/* #endregion */
 
 	/* #region Textboxes */
 		QLineEdit {
-			background-color: palette(shadow);
+			background-color: var(--palette_shadow);
 			padding: 8px;
-			border: 0px solid palette(light);
+			border: 0px solid var(--palette_light);
 			border-radius: 6px;
 			min-height: 16px;
 		}
@@ -593,7 +737,7 @@ OBSTheme::inactive {
 		QCheckBox {
 			spacing: 5px;
 			outline: none;
-			color: palette(text);
+			color: var(--palette_text);
 			margin-bottom: 2px;
 			padding: 4px;
 			border-radius: 6px;
@@ -601,12 +745,12 @@ OBSTheme::inactive {
 		}
 
 		QCheckBox:hover, QCheckBox:focus {
-			color: palette(text);
+			color: var(--palette_text);
 			background-color: rgba(9, 22, 30,0.5);
 		}
 
 		QCheckBox:disabled {
-			color: palette(light);
+			color: var(--palette_light);
 		}
 
 		QCheckBox::indicator,
@@ -620,33 +764,33 @@ OBSTheme::inactive {
 		}
 
 		QCheckBox::indicator:unchecked {
-			image: url(./Mintchip/Controls/square.svg);
+			image: url(theme:Mintchip/Controls/square.svg);
 		}
 
 		QCheckBox::indicator:unchecked:hover,
 		QGroupBox::indicator:unchecked:hover {
 			border: none;
-			image: url(./Mintchip/Controls/square-hover.svg);
+			image: url(theme:Mintchip/Controls/square-hover.svg);
 		}
 
 		QCheckBox::indicator:checked {
-			image: url(./Mintchip/Controls/square-full.svg);
+			image: url(theme:Mintchip/Controls/square-full.svg);
 		}
 
 		QCheckBox::indicator:checked:hover,
 		QGroupBox::indicator:checked:hover {
 			border: none;
-			image: url(./Mintchip/Controls/square-full-hover.svg);
+			image: url(theme:Mintchip/Controls/square-full-hover.svg);
 		}
 
 		QCheckBox::indicator:checked:disabled,
 		QGroupBox::indicator:checked:disabled {
-			image: url(./Mintchip/Controls/square-full-disabled.svg);
+			image: url(theme:Mintchip/Controls/square-full-disabled.svg);
 		}
 
 		QCheckBox::indicator:unchecked:disabled,
 		QGroupBox::indicator:unchecked:disabled {
-			image: url(./Mintchip/Controls/square-disabled.svg);
+			image: url(theme:Mintchip/Controls/square-disabled.svg);
 		}
 	/* #endregion */
 
@@ -654,7 +798,7 @@ OBSTheme::inactive {
 		QRadioButton {
 			spacing: 5px;
 			outline: none;
-			color: palette(text);
+			color: var(--palette_text);
 			margin-bottom: 2px;
 			padding: 4px;
 			border-radius: 6px;
@@ -662,7 +806,7 @@ OBSTheme::inactive {
 		}
 
 		QRadioButton:disabled {
-			color: palette(light);
+			color: var(--palette_light);
 		}
 
 		QRadioButton::indicator {
@@ -671,7 +815,7 @@ OBSTheme::inactive {
 		}
 
 		QRadioButton::indicator:unchecked {
-			image: url(./Mintchip/Controls/circle.svg);
+			image: url(theme:Mintchip/Controls/circle.svg);
 		}
 
 
@@ -680,13 +824,13 @@ OBSTheme::inactive {
 		QRadioButton::indicator:unchecked:pressed {
 			border: none;
 			outline: none;
-			image: url(./Mintchip/Controls/circle-hover.svg);
+			image: url(theme:Mintchip/Controls/circle-hover.svg);
 		}
 
 		QRadioButton::indicator:checked {
 			border: none;
 			outline: none;
-			image: url(./Mintchip/Controls/circle-full.svg);
+			image: url(theme:Mintchip/Controls/circle-full.svg);
 		}
 
 		QRadioButton::indicator:checked:hover,
@@ -694,22 +838,22 @@ OBSTheme::inactive {
 		QRadioButton::indicator:checked:pressed {
 			border: none;
 			outline: none;
-			image: url(./Mintchip/Controls/circle-full-hover.svg);
+			image: url(theme:Mintchip/Controls/circle-full-hover.svg);
 		}
 
 		QRadioButton::indicator:checked:disabled {
 			outline: none;
-			image: url(./Mintchip/Controls/circle-full-disabled.svg);
+			image: url(theme:Mintchip/Controls/circle-full-disabled.svg);
 		}
 
 		QRadioButton::indicator:unchecked:disabled {
-			image: url(./Mintchip/Controls/circle-disabled.svg);
+			image: url(theme:Mintchip/Controls/circle-disabled.svg);
 		}
 	/* #endregion */
 
 	/* #region Progress Bars */
 		QProgressBar {
-			border: 2px solid palette(mid);
+			border: 2px solid var(--palette_mid);
 			border-radius: 4px;
 			text-align: center;
 		}
@@ -721,7 +865,7 @@ OBSTheme::inactive {
 
 	/* #region Combo Boxes (List Box) */
 		QComboBox {
-			background-color: palette(shadow);
+			background-color: var(--palette_shadow);
 			border: 0px solid rgb(118, 121, 124);
 			border-radius: 4px;
 			padding: 8px;
@@ -736,7 +880,7 @@ OBSTheme::inactive {
 		}
 
 		QComboBox QAbstractItemView {
-			background-color: palette(shadow); /* Dark Gray */
+			background-color: var(--palette_shadow); /* Dark Gray */
 			border-radius: 4px;
 			border: 0px transparent;
 		}
@@ -750,7 +894,7 @@ OBSTheme::inactive {
 		}
 
 		QComboBox::item:selected {
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 		}
 
 		QComboBox::indicator {
@@ -765,7 +909,7 @@ OBSTheme::inactive {
 			width: 30px;
 
 			border-left-width: 0;
-			border-left-color: palette(light);
+			border-left-color: var(--palette_light);
 			border-left-style: solid;
 			border-top-right-radius: 3px;
 			border-bottom-right-radius: 3px;
@@ -775,13 +919,13 @@ OBSTheme::inactive {
 		QComboBox::down-arrow,
 		QComboBox::down-arrow:pressed,
 		QComboBox::down-arrow:focus {
-			image: url(./Mintchip/Controls/angle-down-disabled.svg);
+			image: url(theme:Mintchip/Controls/angle-down-disabled.svg);
 		}
 
 		QComboBox::down-arrow:on,
 		QComboBox::down-arrow:hover {
-			image: url(./Mintchip/Controls/angle-down.svg);
-			background-color: palette(shadow); /* Dark Gray */
+			image: url(theme:Mintchip/Controls/angle-down.svg);
+			background-color: var(--palette_shadow); /* Dark Gray */
 		}
 
 		/* #region OBS Settings Pane Fixes */
@@ -798,7 +942,7 @@ OBSTheme::inactive {
 
 	/* #region Group Boxes */
 		QGroupBox {
-			border: 1px solid palette(mid);
+			border: 1px solid var(--palette_mid);
 			border-radius: 6px;
 			padding-top: 16px;
 			margin-top: 20px;
@@ -825,7 +969,7 @@ OBSTheme::inactive {
 		}
 
 		QSplitter::handle:hover {
-			background-color: palette(light);
+			background-color: var(--palette_light);
 		}
 	/* #endregion */
 
@@ -874,21 +1018,21 @@ OBSTheme::inactive {
 
 		QSlider::sub-page:horizontal:disabled,
 		QSlider::groove:vertical:disabled {
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 		}
 
 		QSlider::add-page:horizontal,
 		QSlider::sub-page:vertical {
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 		}
 
 		QSlider::add-page:vertical,
 		QSlider::sub-page:horizontal {
-			background-color: palette(highlight);
+			background-color: var(--palette_highlight);
 		}
 
 		QSlider::handle:disabled {
-			background-color: palette(light);
+			background-color: var(--palette_light);
 		}
 
 		/* Context Container Fix */
@@ -907,114 +1051,7 @@ OBSTheme::inactive {
 
 /* #region OBS Elements */
 
-	/* #region Theme Elements */
-
-		* [themeID="playIcon"] {
-		qproperty-icon: url(./Mintchip/play.svg);
-		}
-
-		* [themeID="pauseIcon"] {
-		qproperty-icon: url(./Mintchip/pause.svg);
-		}
-
-		* [themeID="restartIcon"] {
-		qproperty-icon: url(./Mintchip/refresh.svg);
-		}
-
-		* [themeID="stopIcon"] {
-		qproperty-icon: url(./Mintchip/stop.svg);
-		}
-
-		* [themeID="nextIcon"] {
-		qproperty-icon: url(./Mintchip/controls/angle-right.svg);
-		}
-
-		* [themeID="previousIcon"] {
-		qproperty-icon: url(./Mintchip/controls/angle-left.svg);
-		}
-
-		/* Standard Icons */
-
-		* [themeID="addIconSmall"] {
-		qproperty-icon: url(./Mintchip/plus.svg);
-		}
-
-		* [themeID="removeIconSmall"] {
-		qproperty-icon: url(./Mintchip/minus.svg);
-		}
-
-		* [themeID="propertiesIconSmall"] {
-		qproperty-icon: url(./Mintchip/Settings/cog.svg);
-		}
-
-		* [themeID="configIconSmall"] {
-		qproperty-icon: url(./Mintchip/Settings/cog.svg);
-		}
-
-		* [themeID="menuIconSmall"] {
-			qproperty-icon: url(./Mintchip/Controls/dots-vert.svg);
-		}
-
-		* [themeID="cogsIcon"] {
-		qproperty-icon: url(./Mintchip/Settings/cog.svg);
-		}
-
-		* [themeID="refreshIconSmall"] {
-		qproperty-icon: url(./Mintchip/refresh.svg);
-		}
-
-		* [themeID="upArrowIconSmall"] {
-		qproperty-icon: url(./Mintchip/controls/angle-up.svg);
-		}
-
-		* [themeID="downArrowIconSmall"] {
-		qproperty-icon: url(./Mintchip/controls/angle-down.svg);
-		}
-
-		* [themeID="pauseIconSmall"] {
-		qproperty-icon: url(./Mintchip/pause.svg);
-		}
-
-		* [themeID="revertIcon"] {
-		qproperty-icon: url(./Mintchip/undo.svg);
-		}
-
-		* [themeID="trashIconSmall"] {
-		qproperty-icon: url(./Mintchip/delete.svg);
-		}
-
-		* [themeID="trashIcon"] {
-		qproperty-icon: url(./Mintchip/delete.svg);
-		}
-
-		* [themeID="clearIconSmall"] {
-		qproperty-icon: url(./Mintchip/delete.svg);
-		}
-	/* #endregion */
-
 	/* #region Main Window */
-		OBSBasic {
-		qproperty-imageIcon: url(./Mintchip/Sources/image.svg);
-		qproperty-colorIcon: url(./Mintchip/Sources/brush.svg);
-		qproperty-slideshowIcon: url(./Mintchip/Sources/images.svg);
-		qproperty-audioInputIcon: url(./Mintchip/Sources/microphone.svg);
-		qproperty-audioOutputIcon: url(./Mintchip/Sources/sound.svg);
-		qproperty-desktopCapIcon: url(./Mintchip/Sources/monitor.svg);
-		qproperty-windowCapIcon: url(./Mintchip/Sources/window.svg);
-		qproperty-gameCapIcon: url(./Mintchip/Sources/default.svg);
-		qproperty-cameraIcon: url(./Mintchip/Sources/webcam.svg);
-		qproperty-textIcon: url(./Mintchip/Sources/text.svg);
-		qproperty-mediaIcon: url(./Mintchip/Settings/video.svg);
-		qproperty-browserIcon: url(./Mintchip/Sources/globe.svg);
-		qproperty-groupIcon: url(./Mintchip/Sources/folder.svg);
-		qproperty-sceneIcon: url(./Mintchip/Sources/scene.svg);
-		qproperty-defaultIcon: url(./Mintchip/Sources/default.svg);
-		qproperty-windowIcon: url(./Mintchip/icon_256x256.png);
-		qproperty-trashIcon: url(./Mintchip/delete.svg);
-
-		qproperty-dockNestingEnabled: true;
-		qproperty-unifiedTitleAndToolBarOnMac: false;
-		}
 
 		/* #region OBS Preview Window */
 				/* #centralWidget > QFrame {
@@ -1027,7 +1064,33 @@ OBSTheme::inactive {
 				} */
 
 				OBSQTDisplay {
-					qproperty-displayBackgroundColor: palette(dark);
+					qproperty-displayBackgroundColor: var(--palette_shadow);
+					border-radius: 16px;
+				}
+
+				#previewContainer {
+					background: var(--palette_dark);
+					padding: 16px;
+					border-radius: 16px;
+				}
+
+				#previewXContainer {
+					background: var(--palette_dark);
+					padding: 16px;
+					margin: 16px;
+				}
+
+				#previewYScrollBar {
+					border-radius: 0px;
+					background: var(--palette_shadow);
+				}
+
+				#previewScalePercent {
+					margin: 8px 8px 8px 8px;
+				}
+
+				#previewScalingMode {
+					margin: 8px 8px 8px 0px;
 				}
 
 				#previewLayout,
@@ -1039,14 +1102,14 @@ OBSTheme::inactive {
 
 				#previewDisabledWidget,
 				#previewDisabledWidget > QFrame {
-					background-color: palette(dark);
+					background-color: var(--palette_dark);
 				}
 
 				
 				#contextSubContainer,
 				#contextSubContainer > QFrame,
 				#contextContainer > QFrame {
-					background-color: palette(shadow);
+					background-color: var(--palette_shadow);
 				}
 
 				/* #region OBS Preview Controls */
@@ -1067,11 +1130,11 @@ OBSTheme::inactive {
 				}
 
 				#sourcePropertiesButton {
-					icon: url(./Mintchip/Settings/cog.svg);
+					icon: url(theme:Mintchip/Settings/cog.svg);
 				}
 
 				#sourceFiltersButton {
-					icon: url(./Mintchip/filter.svg);
+					icon: url(theme:Mintchip/filter.svg);
 
 				}
 
@@ -1102,14 +1165,14 @@ OBSTheme::inactive {
 
 		SourceTree,
 		#stackedMixerArea,
-		#controlsDockContents {
+		#controlsFrame QPushButton {
 			padding: 8px;
 			border-radius: 6px;
 		}
 
 		#stackedMixerArea,
-		#controlsDockContents {
-			margin: 8px;
+		#controlsFrame QPushButton {
+			margin: 4px;
 		}
 
 		OBSBasicStatusBar::item {
@@ -1125,40 +1188,40 @@ OBSTheme::inactive {
 		}
 
 		MuteCheckBox::indicator:checked {
-			image: url(./Mintchip/Controls/mute.svg);
+			image: url(theme:Mintchip/Controls/mute.svg);
 		}
 
 		MuteCheckBox::indicator:unchecked {
-			image: url(./Mintchip/Controls/audio.svg);
+			image: url(theme:Mintchip/Controls/audio.svg);
 		}
 
 		MuteCheckBox::indicator:unchecked:hover {
-			image: url(./Mintchip/Controls/audio-hover.svg);
+			image: url(theme:Mintchip/Controls/audio-hover.svg);
 		}
 
 		MuteCheckBox::indicator:unchecked:focus {
-			image: url(./Mintchip/Controls/audio-hover.svg);
+			image: url(theme:Mintchip/Controls/audio-hover.svg);
 		}
 		MuteCheckBox::indicator:checked:hover {
-			image: url(./Mintchip/Controls/mute-hover.svg);
+			image: url(theme:Mintchip/Controls/mute-hover.svg);
 		}
 
 		MuteCheckBox::indicator:checked:focus {
-			image: url(./Mintchip/Controls/mute-hover.svg);
+			image: url(theme:Mintchip/Controls/mute-hover.svg);
 		}
 
 		MuteCheckBox::indicator:checked:disabled {
-			image: url(./Mintchip/Controls/mute.svg);
+			image: url(theme:Mintchip/Controls/mute.svg);
 		}
 
 		MuteCheckBox::indicator:unchecked:disabled {
-			image: url(./Mintchip/Controls/audio.svg);
+			image: url(theme:Mintchip/Controls/audio.svg);
 		}
 	/* #endregion */
 
 	/* #region Source Trees */
 		SourceTree, SourceTree > * {
-			background-color: palette(shadow);
+			background-color: var(--palette_shadow);
 		}
 
 		SourceTree::item {
@@ -1186,24 +1249,30 @@ OBSTheme::inactive {
 			margin: 0px;
 		} */
 
-		SourceTreeItem QCheckBox {
+		SourceTree .indicator-visibility,
+		SourceTree .indicator-lock {
 			padding: 0px;
 			margin: 0px;
+			margin-left: 6px
+		}
+
+		.source-icon {
+			padding: 0px 4px;
 		}
 
 		SourceTree::item:selected:!active {
 			color: rgb(239, 240, 241); /* White */
-			background-color: palette(dark); /* Light Pink (Secondary Light) */
+			background-color: var(--palette_dark); /* Light Pink (Secondary Light) */
 		}
 
 		SourceTree::item:selected {
-			background-color: palette(dark); /* Pink (Secondary) */
+			background-color: var(--palette_dark); /* Pink (Secondary) */
 		}
 
 		SourceTree::item:hover,
 		SourceTree::item:disabled:hover,
 		SourceTree::item:hover:!active {
-			background-color: palette(mid); /* Cyan (Primary) */
+			background-color: var(--palette_mid); /* Cyan (Primary) */
 			color: rgb(239, 240, 241); /* White */
 		}
 
@@ -1219,38 +1288,38 @@ OBSTheme::inactive {
 			border: none;
 			border-radius: none;
 			margin-top: 4px;
-			color: palette(shadow);
+			color: var(--palette_shadow);
 		}
 		
-		SourceTreeSubItemCheckBox {
+		.indicator-expand {
 			padding: 0px;
-			min-width: 20px;
+			/* min-width: 20px; */
 		}
 
-		SourceTreeSubItemCheckBox::indicator {
+		.indicator-expand::indicator {
 			border-radius: 6px;
-			background-color: palette(mid);
+			background-color: var(--palette_mid);
 			width: 20px;
 			height: 20px;
-			margin: -10px 0px 0px 0px;
+			margin: 0px 0px 0px 0px;
 		}
 
-		SourceTreeSubItemCheckBox::indicator:hover {
-			background-color: palette(light);
+		.indicator-expand::indicator:hover {
+			background-color: var(--palette_light);
 		}
 
-		SourceTreeSubItemCheckBox::indicator:pressed {
-			background-color: palette(highlight);
+		.indicator-expand::indicator:pressed {
+			background-color: var(--palette_highlight);
 		}
 
-		SourceTreeSubItemCheckBox::indicator:checked,
-		SourceTreeSubItemCheckBox::indicator:checked:hover {
-			image: url(./Mintchip/Controls/angle-down.svg);
+		.indicator-expand::indicator:checked,
+		.indicator-expand::indicator:checked:hover {
+			image: url(theme:Mintchip/Controls/angle-down.svg);
 		}
 
-		SourceTreeSubItemCheckBox::indicator:unchecked,
-		SourceTreeSubItemCheckBox::indicator:unchecked:hover {
-			image: url(./Mintchip/Controls/angle-up.svg);
+		.indicator-expand::indicator:unchecked,
+		.indicator-expand::indicator:unchecked:hover {
+			image: url(theme:Mintchip/Controls/angle-up.svg);
 		}
 
 		OBSYoutubeActions {
@@ -1259,56 +1328,29 @@ OBSTheme::inactive {
 	/* #endregion */
 
 	/* #region Folder/Visibility/Lock Icons */
-		VisibilityCheckBox,
-		LockedCheckBox,
-		SourceTreeSubItemCheckBox {
+		.indicator-visibility,
+		.indicator-lock,
+		.indicator-expand {
 		outline: none;
 		background: transparent;
 		}
 
-		VisibilityCheckBox::indicator,
-		SourceTreeSubItemCheckBox::indicator,
-		LockedCheckBox::indicator {
+		.indicator-visibility::indicator,
+		.indicator-expand::indicator,
+		.indicator-lock::indicator {
 		width: 18px;
 		height: 18px;
 		padding: 0px;
 		}
 
-		OBSBasicFilters VisibilityCheckBox::indicator {
+		OBSBasicFilters .indicator-visibility::indicator {
 			margin-top: -8px;
 		}
 
-		VisibilityCheckBox::indicator:checked {
-		image: url(./Mintchip/Controls/eye.svg);
+		.indicator-visibility:hover {
+			background: transparent;
 		}
 
-		VisibilityCheckBox::indicator:unchecked {
-		image: url(./Mintchip/Controls/eye-slash.svg);
-		}
-
-		VisibilityCheckBox::indicator:checked:hover {
-		image: url(./Mintchip/Controls/eye-hover.svg);
-		}
-
-		VisibilityCheckBox::indicator:unchecked:hover {
-		image: url(./Mintchip/Controls/eye-slash-hover.svg);
-		}
-
-		LockedCheckBox::indicator:checked {
-		image: url(./Mintchip/Controls/locked.svg);
-		}
-
-		LockedCheckBox::indicator:unchecked {
-		image: url(./Mintchip/Controls/unlocked.svg);
-		}
-
-		LockedCheckBox::indicator:checked:hover {
-		image: url(./Mintchip/Controls/locked-hover.svg);
-		}
-
-		LockedCheckBox::indicator:unchecked:hover {
-		image: url(./Mintchip/Controls/unlocked-hover.svg);
-		}
 	/* #endregion */
 
 	/* #region Transition Controls */
@@ -1346,23 +1388,23 @@ OBSTheme::inactive {
 		}
 
 		#transitionProps {
-			icon: url(./Mintchip/Settings/cog.svg);
+			icon: url(theme:Mintchip/Settings/cog.svg);
 		}
 
 		#transitionProps:hover {
-			icon: url(./Mintchip/Controls/cog-selected.svg);
+			icon: url(theme:Mintchip/Controls/cog-selected.svg);
 		}
 
 		#transitionProps:open,
 		#transitionProps:focus {
-			icon: url(./Mintchip/Controls/cog-hover.svg);
+			icon: url(theme:Mintchip/Controls/cog-hover.svg);
 		}
 	/* #endregion */
 
 	/* #region Stream Control Buttons */
 		#controlsDockContents QPushButton {
 			margin: 2px 12px;
-			/* background-color: palette(mid); */
+			/* background-color: var(--palette_mid); */
 		}
 
 		#controlsDockContents QPushButton:hover,
@@ -1379,46 +1421,46 @@ OBSTheme::inactive {
 			border: 1px solid rgb(47, 194, 162);
 		}
 
-		#controlsDockContents QPushButton[themeID="vcamButton"] {
+		#controlsDockContents QPushButton#virtualCamButton {
 			margin-right: 4px;
 			padding-right: -16px;
 		}
 
-		#controlsDockContents QPushButton[themeID="configIconSmall"] {
+		#controlsDockContents QPushButton.icon-cogs {
 			margin-left: 0px;
 		}
 
 		QAbstractButton#streamButton,
 		QAbstractButton#recordButton,
-		QAbstractButton[themeID="vcamButton"]
-		QAbstractButton[themeID="replayBufferButton"] {
+		QAbstractButton#virtualCamButton
+		QAbstractButton#replayBufferButton {
 			background-color: rgb(80, 50, 60);
 			border: 1px solid rgb(80, 50, 60);
 		}
 
 		QAbstractButton:hover#streamButton,
 		QAbstractButton:hover#recordButton,
-		QAbstractButton:hover[themeID="vcamButton"],
-		QAbstractButton:hover[themeID="replayBufferButton"],
-		#controlsDockContents :hover[themeID="vcamButton"] {
+		QAbstractButton#virtualCamButton:hover,
+		QAbstractButton#replayBufferButton:hover,
+		#controlsDockContents #virtualCamButton:hover {
 			background-color: rgb(180, 60, 90);
 			border: 1px solid rgb(180, 60, 90);
 		}
 
 		QAbstractButton:checked#streamButton,
 		QAbstractButton:checked#recordButton,
-		QAbstractButton:checked[themeID="vcamButton"],
-		QAbstractButton:checked[themeID="replayBufferButton"],
-		#controlsDockContents :checked[themeID="vcamButton"] {
+		QAbstractButton#virtualCamButton:checked,
+		QAbstractButton#replayBufferButton:checked,
+		#controlsDockContents #virtualCamButton:checked {
 			background-color: rgb(255, 0, 20);
 			border: 1px solid rgb(255, 0, 20);
 		}
 
 		QAbstractButton:checked:hover#streamButton,
 		QAbstractButton:checked:hover#recordButton,
-		QAbstractButton:checked:hover[themeID="vcamButton"],
-		QAbstractButton:checked:hover[themeID="replayBufferButton"]
-		#controlsDockContents :checked:hover[themeID="vcamButton"] {
+		QAbstractButton:checked#virtualCamButton:hover,
+		QAbstractButton:checked#replayBufferButton:hover
+		#controlsDockContents :checked#virtualCamButton:hover {
 			background-color: rgb(255, 80, 120);
 			border: 1px solid rgb(255, 80, 120);
 		}
@@ -1453,12 +1495,13 @@ OBSTheme::inactive {
 		}
 
 		#stackedMixerArea {
-			background-color: palette(shadow);
+			background-color: var(--palette_shadow);
 			margin: 0px;
 		}
 
 		#stackedMixerArea QSlider:horizontal {
 			padding-right: 0px;
+			margin-bottom: 8px;
 		}
 
 		#stackedMixerArea QWidget {
@@ -1470,12 +1513,21 @@ OBSTheme::inactive {
 			border-radius: 6px;
 		}
 
-		#stackedMixerArea QPushButton[themeID="menuIconSmall"] {
+		VolControl {
+			border-radius: 0px;
+			border-bottom: 2px dotted var(--palette_mid);
+			margin-bottom: 8px;
+		}
+
+		#stackedMixerArea .icon-dots-vert {
 			border: 0px transparent;
 			background-color: transparent;
-			min-width: 0px;
+			padding: 2px 6px;
+			margin-right: 2px;
+			margin-left: 2px;
+			min-width: 8px;
+			min-height: 0px;
 			width: 8px;
-			padding: 2px;
 
 		}
 
@@ -1483,8 +1535,8 @@ OBSTheme::inactive {
 			margin: 0px 1px 0px 0px;
 		}
 
-		#hVolumeWidgets MuteCheckBox::indicator {
-			margin: 4px -6px 0px 0px;
+		#hVolumeWidgets .indicator-mute::indicator {
+			margin: 12px 0px 0px 0px;
 		}
 
 		#vVolumeWidgets QPushButton/* [themeID="menuIconSmall"] */ {
@@ -1492,14 +1544,14 @@ OBSTheme::inactive {
 			margin-right: 3px;
 		}
 
-		#stackedMixerArea QPushButton:hover[themeID="menuIconSmall"] {
-			background-color: palette(mid);
-			icon: url(./Mintchip/Controls/dots-vert-selected.svg);
+		#stackedMixerArea .icon-dots-vert:hover {
+			background-color: var(--palette_mid);
+			icon: url(theme:Mintchip/Controls/dots-vert-selected.svg);
 		}
 
-		#stackedMixerArea QPushButton:pressed[themeID="menuIconSmall"] {
-			background-color: palette(light);
-			icon: url(./Mintchip/Controls/dots-vert-hover.svg);
+		#stackedMixerArea .icon-dots-vert:pressed {
+			background-color: var(--palette_light);
+			icon: url(theme:Mintchip/Controls/dots-vert-hover.svg);
 		}
 	/* #endregion */
 
@@ -1511,14 +1563,15 @@ OBSTheme::inactive {
 		}
 
 		OBSBasicSettings {
-			qproperty-generalIcon: url(./Mintchip/Settings/cog.svg);
-			qproperty-streamIcon: url(./Mintchip/Settings/stream.svg);
-			qproperty-outputIcon: url(./Mintchip/Settings/output.svg);
-			qproperty-audioIcon: url(./Mintchip/Settings/sound.svg);
-			qproperty-videoIcon: url(./Mintchip/Settings/video.svg);
-			qproperty-hotkeysIcon: url(./Mintchip/Settings/keys.svg);
-			qproperty-advancedIcon: url(./Mintchip/Settings/advanced.svg);
-    		qproperty-accessibilityIcon: url(./Mintchip/Settings/access.svg);
+			qproperty-generalIcon: url(theme:Mintchip/Settings/cog.svg);
+			qproperty-streamIcon: url(theme:Mintchip/Settings/stream.svg);
+			qproperty-outputIcon: url(theme:Mintchip/Settings/output.svg);
+			qproperty-audioIcon: url(theme:Mintchip/Settings/sound.svg);
+			qproperty-videoIcon: url(theme:Mintchip/Settings/video.svg);
+			qproperty-hotkeysIcon: url(theme:Mintchip/Settings/keys.svg);
+			qproperty-advancedIcon: url(theme:Mintchip/Settings/advanced.svg);
+    		qproperty-accessibilityIcon: url(theme:Mintchip/Settings/access.svg);
+			qproperty-appearanceIcon: url(theme:Mintchip/Sources/brush.svg);
 		}
 
 		#hotkeyPage QLabel {
@@ -1541,29 +1594,30 @@ OBSTheme::inactive {
 
 	/* #region Toolbar Plugin */
 		#toolbarDisplay {
-			border: 1px solid palette(light);
-			background-color: palette(mid);
+			border: 1px solid var(--palette_light);
+			background-color: var(--palette_mid);
 			border-radius: 6px;
 		}
 
 		#toolbarContents {
-			background-color: palette(dark);
+			background-color: var(--palette_dark);
 		}
 
 		#toolbarDock #recordButton {
-			qproperty-icon: url(./Mintchip/Settings/output.svg);
+			qproperty-icon: url(theme:Mintchip/Settings/output.svg);
 		}
 
 		#toolbarDock #replayBufferButton {
-			qproperty-icon: url(./Mintchip/replay.svg);
+			qproperty-icon: url(theme:Mintchip/replay.svg);
 		}
 
 		#toolbarDock #floatButton {
-			qproperty-icon: url(./Mintchip/window.svg);
+			qproperty-icon: url(theme:Mintchip/window.svg);
 		}
 
-		#toolbarDock #virtualCamButton {
-			qproperty-icon: url(./Mintchip/Sources/webcam.svg);
+		#toolbarDock #virtualCamButton,
+		#toolbarDock #vcamButton {
+			qproperty-icon: url(theme:Mintchip/Sources/webcam.svg);
 		}
 	/* #endregion */
 
@@ -1592,8 +1646,38 @@ OBSTheme::inactive {
 	QToolTip {
 		padding: 4px;
 		margin: 0px;
-		background-color: palette(dark);
+		background-color: var(--palette_dark);
 	}
+
+	/* #region Advanced Scene Switcher */
+
+    #Adv-ss-dock > QWidget {
+        /* Yes, this is necessary. */
+        height: 116px;
+        min-height: 116px;
+        max-height: 116px;
+        background-color: var(--palette_shadow);
+        margin: 8px 16px;
+		/* padding-top: 0px; */
+		border-radius: 6px;
+    }
+
+
+	#Adv-ss-dock QPushButton {
+		min-height: 32px;
+		margin-bottom: 8px;
+	}
+
+	#Adv-ss-dock QLabel {
+        height: 32px;
+        min-height: 32px;
+        max-height: 32px;
+		text-align: center center;
+		/* padding-bottom: 8px; */
+	}
+
+/* #endregion */
+
 /* #endregion */
 
 /* #region Unused */
